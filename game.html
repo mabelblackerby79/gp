@@ -85,6 +85,7 @@
         };
         let d;
         let gameActive = true;
+        let hasSubmitted = false; // NEW: Prevents multiple pop-ups
 
         document.addEventListener("keydown", direction);
 
@@ -96,6 +97,9 @@
         }
 
         function sendToDiscord(finalScore) {
+            if (hasSubmitted) return; // Stop if already asking
+            hasSubmitted = true;
+
             const playerName = prompt("Game Over! Enter your name for the leaderboard:", "Anonymous");
             const webhookURL = "https://discord.com/api/webhooks/1472250942266277939/UAkk3_vo8qbfURbiHFi0oNleTKDF5e-Bn7mlPh-Fku8UI_jLWuV_LEv_EeawsZLYqEXQ"; 
 
@@ -149,10 +153,12 @@
 
             let newHead = { x: snakeX, y: snakeY };
 
+            // Wall or Self Collision
             if(snakeX < 0 || snakeX >= canvas.width || snakeY < 0 || snakeY >= canvas.height || collision(newHead, snake)) {
                 gameActive = false;
                 clearInterval(gameInterval);
-                sendToDiscord(score);
+                sendToDiscord(score); // Triggered only once now
+                return;
             }
 
             if(snakeX == food.x && snakeY == food.y) {
