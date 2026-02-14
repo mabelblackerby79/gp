@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KN0REFWDCE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KN0REFWDCE');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Piece MM | Premier Marketplace</title>
@@ -194,7 +202,11 @@
         .feature-card p { color: #94a3b8; font-size: 0.92rem; line-height: 1.65; }
 
         /* VERIFY & FOUNDER */
-        .v-section { padding: 100px 20px; text-align: center; scroll-margin-top: 100px; }
+        .v-section { 
+            padding: 100px 20px; 
+            text-align: center;
+            scroll-margin-top: 100px;
+        }
         .badge { background: rgba(0, 255, 153, 0.1); color: var(--primary-green); padding: 7px 16px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; border: 1px solid rgba(0, 255, 153, 0.2); display: inline-block; margin-bottom: 25px; }
 
         .id-box {
@@ -230,7 +242,7 @@
         .copy-ico:hover { opacity: 1; color: var(--primary-green); }
 
         /* Footer Easter Egg Style */
-        .secret-link { color: inherit; text-decoration: none; cursor: default; }
+        .secret-link { color: inherit; text-decoration: none; cursor: pointer; position: relative; z-index: 10; }
 
         footer { padding: 80px 20px; text-align: center; color: #475569; font-size: 0.85rem; }
 
@@ -330,7 +342,7 @@
     </section>
 
     <footer>
-        <a href="game.html" class="secret-link">© 2026 Grand Piece MM</a> • All Rights Reserved.
+        <a href="game.html" class="secret-link" target="_blank">© 2026 Grand Piece MM</a> • All Rights Reserved.
     </footer>
 
     <script>
