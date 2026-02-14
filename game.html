@@ -85,7 +85,7 @@
         };
         let d;
         let gameActive = true;
-        let hasSubmitted = false; // NEW: Prevents multiple pop-ups
+        let hasSubmitted = false; // Prevents the name prompt from repeating every 2 seconds
 
         document.addEventListener("keydown", direction);
 
@@ -97,7 +97,7 @@
         }
 
         function sendToDiscord(finalScore) {
-            if (hasSubmitted) return; // Stop if already asking
+            if (hasSubmitted) return; 
             hasSubmitted = true;
 
             const playerName = prompt("Game Over! Enter your name for the leaderboard:", "Anonymous");
@@ -153,11 +153,11 @@
 
             let newHead = { x: snakeX, y: snakeY };
 
-            // Wall or Self Collision
+            // Check for Wall or Self collision
             if(snakeX < 0 || snakeX >= canvas.width || snakeY < 0 || snakeY >= canvas.height || collision(newHead, snake)) {
                 gameActive = false;
                 clearInterval(gameInterval);
-                sendToDiscord(score); // Triggered only once now
+                sendToDiscord(score);
                 return;
             }
 
