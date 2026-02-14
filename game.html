@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Piece MM | Secret Game</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #060b12;
@@ -27,47 +27,17 @@
             overflow: hidden;
         }
 
-        .game-container {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
-        }
-
         canvas {
             border: 2px solid #00ff99;
             background-color: #0c1422;
             box-shadow: 0 0 20px rgba(0, 255, 153, 0.2);
         }
 
-        .leaderboard {
-            background: rgba(12, 20, 34, 0.8);
-            border: 1px solid rgba(0, 255, 153, 0.15);
-            padding: 20px;
-            border-radius: 12px;
-            min-width: 200px;
-        }
-
-        .leaderboard h2 {
-            color: #00ff99;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+        .header {
+            margin-bottom: 20px;
             text-align: center;
-            text-transform: uppercase;
         }
 
-        .leaderboard-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.9rem;
-            color: #94a3b8;
-        }
-
-        .leaderboard-item:last-child { border: none; }
-        .rank { color: #00ff99; font-weight: bold; margin-right: 10px; }
-
-        .header { margin-bottom: 20px; text-align: center; }
         h1 { color: #00ff99; margin: 0; font-size: 2.5rem; letter-spacing: -1px; }
         p { color: #94a3b8; margin: 5px 0; font-size: 1.2rem; }
 
@@ -80,6 +50,7 @@
             border-radius: 8px;
             border: 1px solid rgba(255,255,255,0.1);
             transition: 0.3s;
+            font-size: 0.9rem;
         }
 
         .back-btn:hover {
@@ -96,25 +67,7 @@
         <p>Score: <span id="score">0</span></p>
     </div>
 
-    <div class="game-container">
-        <canvas id="snakeGame" width="400" height="400"></canvas>
-
-        <div class="leaderboard">
-            <h2>🏆 Top 3</h2>
-            <div class="leaderboard-item">
-                <span><span class="rank">#1</span> ---</span>
-                <span>0</span>
-            </div>
-            <div class="leaderboard-item">
-                <span><span class="rank">#2</span> ---</span>
-                <span>0</span>
-            </div>
-            <div class="leaderboard-item">
-                <span><span class="rank">#3</span> ---</span>
-                <span>0</span>
-            </div>
-        </div>
-    </div>
+    <canvas id="snakeGame" width="400" height="400"></canvas>
 
     <a href="index.html" class="back-btn">Back to Marketplace</a>
 
