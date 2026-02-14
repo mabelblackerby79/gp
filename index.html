@@ -15,7 +15,6 @@
     <meta name="theme-color" content="#00ff99">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --primary-green: #00ff99;
@@ -71,6 +70,10 @@
             color: #000;
             cursor: pointer;
             font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .nav-join:hover {
+            box-shadow: 0 0 15px rgba(0, 255, 153, 0.4);
         }
 
         /* HERO SECTION */
@@ -101,45 +104,47 @@
             margin: 0 auto 40px;
         }
 
-        /* SERVER STATUS BAR - SLIM RATIO & CENTERED */
+        /* --- SLIM SERVER STATUS BAR --- */
         .server-status-bar {
-            background: rgba(12, 20, 34, 0.6);
+            background: rgba(12, 20, 34, 0.8);
             border: 1px solid rgba(0, 255, 153, 0.15);
             border-radius: 12px;
-            padding: 12px 18px; 
+            padding: 8px 20px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 35px;
+            gap: 40px;
             margin-bottom: 55px;
             min-width: 440px;
+            height: 64px;
         }
 
-        .server-info { display: flex; align-items: center; gap: 14px; }
-        .server-info img { width: 44px; height: 44px; border-radius: 10px; }
+        .server-info { display: flex; align-items: center; gap: 12px; height: 100%; }
+        .server-info img { width: 42px; height: 42px; border-radius: 10px; }
         
         .server-details { 
             text-align: left; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
-            height: 44px; 
+            height: 100%; 
+            gap: 2px;
         }
         
-        .server-details h4 { font-size: 1.05rem; font-weight: 700; line-height: 1.1; margin: 0; }
-        .server-details p { font-size: 0.8rem; color: #64748b; white-space: nowrap; margin-top: 3px; line-height: 1; }
+        .server-details h4 { font-size: 0.95rem; font-weight: 700; line-height: 1; margin: 0; }
+        .server-details p { font-size: 0.75rem; color: #64748b; white-space: nowrap; line-height: 1; margin: 0; }
         
-        .dot { height: 7px; width: 7px; background: var(--primary-green); border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 0 0 8px var(--primary-green); }
+        .dot { height: 6px; width: 6px; background: var(--primary-green); border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 0 0 8px var(--primary-green); }
 
         .mini-btn {
             background: var(--primary-green);
             color: #000;
             border: none;
-            padding: 9px 24px;
-            border-radius: 8px;
+            padding: 8px 20px;
+            border-radius: 6px;
             font-weight: 800;
             cursor: pointer;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             align-self: center;
         }
 
@@ -165,6 +170,12 @@
             border-radius: 20px;
             text-align: left;
             flex: 1;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 255, 153, 0.2);
         }
 
         .icon-box {
@@ -183,7 +194,11 @@
         .feature-card p { color: #94a3b8; font-size: 0.92rem; line-height: 1.65; }
 
         /* VERIFY & FOUNDER */
-        .v-section { padding: 100px 20px; text-align: center; scroll-margin-top: 100px; }
+        .v-section { 
+            padding: 100px 20px; 
+            text-align: center;
+            scroll-margin-top: 100px;
+        }
         .badge { background: rgba(0, 255, 153, 0.1); color: var(--primary-green); padding: 7px 16px; border-radius: 100px; font-size: 0.75rem; font-weight: 800; border: 1px solid rgba(0, 255, 153, 0.2); display: inline-block; margin-bottom: 25px; }
 
         .id-box {
@@ -222,8 +237,8 @@
 
         @media (max-width: 900px) {
             .features-grid { flex-direction: column; }
-            .server-status-bar { flex-direction: column; width: 100%; min-width: auto; gap: 15px; padding: 18px; }
-            .server-details { text-align: center; height: auto; }
+            .server-status-bar { flex-direction: column; width: 100%; min-width: auto; gap: 15px; padding: 15px; height: auto; }
+            .server-details { text-align: center; }
         }
     </style>
 </head>
